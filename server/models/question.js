@@ -1,0 +1,28 @@
+import mongoose from "mongoose";
+
+const { ObjectId } = mongoose.Schema;
+const postSchema = new mongoose.Schema(
+  {
+    content: {
+      type: {},
+      required: true,
+    },
+    postedBy: {
+      type: ObjectId,
+      ref: "User",
+    },
+    likes: [{ type: ObjectId, ref: "User" }],
+    answers: [
+      {
+        text: String,
+        created: { type: Date, default: Date.now },
+        postedBy: {
+          type: ObjectId,
+          ref: "User",
+        },
+      },
+    ],
+  },
+  { timestamps: true }
+);
+export default mongoose.model("Post", postSchema);

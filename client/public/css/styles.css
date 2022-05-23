@@ -1,0 +1,130 @@
+.bg-default-image {
+  background-image: url(/images/home.jpg);
+  background-size: 100% 300px;
+}
+.bg-stresspage-image {
+  background-image: url(/images/stressPage.jpg);
+  background-size: 100% 400px;
+}
+.bg-depressionpage-image {
+  background-image: url(/images/depressionPage.jpg);
+  background-size: 100% 370px;
+}
+.bg-anxietypage-image {
+  background-image: url(/images/anxietyPage.jpg);
+  background-size: 100% 370px;
+}
+.bg-angrypage-image {
+  background-image: url(/images/angryPage.jpg);
+  background-size: 100% 370px;
+}
+
+.bg-stress-image {
+  background-image: url(/images/stress.jpg);
+  background-size: 100%;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
+.bg-depression-image {
+  background-image: url(/images/depression.jpg);
+  background-size: 100%;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
+.bg-anxiety-image {
+  background-image: url(/images/anxiety.jpg);
+  background-size: 100%;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
+.bg-angry-image {
+  background-image: url(/images/angry.jpg);
+  background-size: 110%;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
+.bg-chat-image {
+  background-size: 100% 400px;
+  color: #000000;
+}
+.active {
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.text-color-square {
+  color: #000000;
+}
+
+.bg-square-bluepage-color {
+  background-color: #bec6ca;
+}
+.bg-bluepage-color {
+  background-color: #eef0f1;
+}
+
+.bg-purplepage-color {
+  background-color: #f4f0f5;
+}
+
+.bg-square-pinkpage-color {
+  background-color: #fbe0c3;
+}
+.bg-pinkpage-color {
+  background-color: #fef7f0;
+}
+.nav-bar-color {
+  background-color: #344648;
+}
+
+.height-page {
+  height: 300px;
+}
+.height-chat-page {
+  height: 200px;
+}
+
+.chatWidth {
+  width: 100%;
+}
+.chatTextBox {
+  width: 85%;
+}
+.chatBox {
+  height: 300px;
+}
+
+.chatColorOwn {
+  background-color: #cee7f3;
+}
+.chatColor {
+  background-color: #7d8e95;
+}
+.chatText {
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 300px;
+}
+
+.chatOnlineBadge {
+  margin-left: 30px;
+}
+
+.clickable {
+  cursor: pointer;
+  padding: 10px;
+}
+.clickable:hover {
+  background-color: rgb(245, 243, 243);
+}
