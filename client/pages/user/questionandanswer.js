@@ -8,28 +8,34 @@ import { toast } from "react-toastify";
 import QuestionList from "../../components/cards/QuestionList";
 import { Modal } from "antd";
 import AnswerForm from "../../components/forms/AnswerForm";
+import Question from "../../components/cards/Question";
 
 const questionandanswer = () => {
   const [state, setState] = useContext(UserContext);
   //state
   const [content, setContent] = useState("");
   const [posts, setPosts] = useState([]);
+  const [filterPosts, setfilterPosts] = useState([]);
   //answers
   const [answer, setAnswer] = useState("");
   const [visible, setVisible] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState({});
 
+  const [query, setQuery] = useState("");
   //route
   const router = useRouter();
 
   useEffect(() => {
-    if (state && state.token) fetchUserPosts();
+    if (state && state.token) {
+      fetchUserPosts();
+    }
   }, [state && state.token]);
 
   const fetchUserPosts = async () => {
     try {
       const { data } = await axios.get("/create-question");
       setPosts(data);
+      setfilterPosts(data);
     } catch (err) {
       console.log(err);
     }
@@ -122,22 +128,43 @@ const questionandanswer = () => {
           </div>
         </div>
         <div className="row py-3">
-          <div className="col-md-8 offset-md-2">
+          <div className="col-md-8 offset-md-1">
             <PostForm
               content={content}
               setContent={setContent}
               postSubmit={postSubmit}
             />
             <br />
-            <QuestionList
-              posts={posts}
-              handleDelete={handleDelete}
-              handleLike={handleLike}
-              handleUnlike={handleUnlike}
-              handleAnswer={handleAnswer}
-              addAnswer={addAnswer}
-              removeAnswer={removeAnswer}
+            <input
+              placeholder="Search"
+              className="mb-2"
+              onChange={(event) => setQuery(event.target.value)}
             />
+            {filterPosts
+              .filter((post) => {
+                if (query === "") {
+                  console.log(post);
+                  return post;
+                } else if (
+                  post.content.toLowerCase().includes(query.toLowerCase())
+                ) {
+                  console.log(post);
+                  return post;
+                }
+              })
+              .map((post, index) => (
+                <div key={index}>
+                  <Question
+                    post={post}
+                    handleDelete={handleDelete}
+                    handleLike={handleLike}
+                    handleUnlike={handleUnlike}
+                    handleAnswer={handleAnswer}
+                    addAnswer={addAnswer}
+                    removeAnswer={removeAnswer}
+                  />
+                </div>
+              ))}
           </div>
         </div>
         <Modal

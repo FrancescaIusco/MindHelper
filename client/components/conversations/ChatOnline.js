@@ -3,7 +3,7 @@ import { useContext, useState, useEffect, useRef } from "react";
 import { UserContext } from "../../context";
 import axios from "axios";
 
-const ChatOnline = ({ users, setCurrentChat }) => {
+const ChatOnline = ({ users, setCurrentChat, currentUserId }) => {
   const [user, setUser] = useState("");
   const [state, setState] = useContext(UserContext);
   const [newConversations, setNewConversations] = useState("");
@@ -18,7 +18,7 @@ const ChatOnline = ({ users, setCurrentChat }) => {
       }
     };
     getUsers();
-  }, [state.user._id]);
+  }, [currentUserId]);
 
   const handleClick = async (users) => {
     try {

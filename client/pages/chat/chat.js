@@ -35,14 +35,13 @@ const Chat = () => {
         createdAt: Date.now(),
       });
     });
-  }, []);
-  <pre>{JSON.stringify(arrivalMessage, null, 4)}</pre>;
+  }, [user && user.token]);
 
   useEffect(() => {
     arrivalMessage &&
       currentChat?.members.includes(arrivalMessage.sender) &&
       setMessages((prev) => [...prev, arrivalMessage]);
-  }, [arrivalMessage, currentChat]);
+  }, [user && user.token && arrivalMessage && currentChat]);
 
   useEffect(() => {
     if (user && user.token) {
@@ -144,11 +143,13 @@ const Chat = () => {
                 <div className="overflow-scroll chatBox">
                   {messages.map((m) => (
                     <div ref={scrollRef}>
-                      <Message
-                        message={m}
-                        own={m.sender === user.user._id}
-                        ownImage={user.user}
-                      />
+                      {user && user.token && (
+                        <Message
+                          message={m}
+                          own={m.sender === user.user._id}
+                          ownImage={user.user}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -171,11 +172,13 @@ const Chat = () => {
             )}
           </div>
           <div className="col-md-3">
-            <input
-              placeholder="Cautare"
-              className="border-0 border-bottom border-dark chatWidth"
-            />
-            <ChatOnline users={users} setCurrentChat={setCurrentChat} />
+            {user && user.token && (
+              <ChatOnline
+                users={users}
+                setCurrentChat={setCurrentChat}
+                currentUserId={user.user._id}
+              />
+            )}
           </div>
         </div>
       </div>
