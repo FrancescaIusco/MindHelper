@@ -37,6 +37,18 @@ const Home = () => {
           <h1 style={{ color: "#000000" }}>Meriti sa fii fericit!</h1>
         </div>
       </div>
+      <div className="offset-md-4">
+        {state === null && (
+          <>
+            <div>
+              MindHelper, o rețea de socializare pentru sănătatea ta mintala.
+              <br />
+              Daca doresti sa te alaturi comunitatii MindHelper inregistreaza-te
+              <Link href="/register"> aici</Link>
+            </div>
+          </>
+        )}
+      </div>
       <div className="offset-md-1">
         <div className="row">
           <div className="col py-5 ">
@@ -84,20 +96,12 @@ const Home = () => {
             </button>
           </div>
         </div>
-        {/* {state !== null ? (
-          <>
-            <div className="row py-3">
-              <p>
-                Daca ai intrebari, le poti adresa
-                <Link href="/user/questionandanswer">
-                  <a> aici</a>
-                </Link>
-              </p>
-            </div>
-          </>
-        ) : (
-          <></>
-        )} */}
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </div>
   );

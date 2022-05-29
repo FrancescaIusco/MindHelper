@@ -69,13 +69,14 @@ const Register = () => {
             secret={secret}
             setSecret={setSecret}
             loading={loading}
+            page="register"
           />
         </div>
       </div>
       <div className="row">
         <div className="col">
           <Modal
-            title="Congratulations!"
+            title="Felicitari!"
             visible={ok}
             onCancel={() => setOk(false)}
             footer={null}

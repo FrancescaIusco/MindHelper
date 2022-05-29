@@ -60,7 +60,11 @@ const ChatOnline = ({ users, setCurrentChat, currentUserId }) => {
     <>
       <div className="d-flex mt-1">
         <div>
-          <List
+          <Avatar size={40} src={imageSource(users)}>
+            {users.username[0]}
+          </Avatar>
+          <span className="pt-2 mx-2">{users.username}</span>
+          {/* <List
             itemLayout="horizontal"
             dataSource={users}
             renderItem={(restuser) => (
@@ -85,7 +89,7 @@ const ChatOnline = ({ users, setCurrentChat, currentUserId }) => {
                 )}
               </>
             )}
-          />
+          /> */}
         </div>
       </div>
     </>

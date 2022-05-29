@@ -82,7 +82,7 @@ const ResetPasswordProfile = () => {
       <div className="row">
         <div className="col">
           <Modal
-            title="Congratulations!"
+            title="Felicitari!"
             visible={ok}
             onCancel={() => setOk(false)}
             footer={null}

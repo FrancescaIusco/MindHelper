@@ -222,14 +222,14 @@ const Profile = ({ numberOfAnswers = 2 }) => {
         <p className="text-center">
           Daca doriti sa va schimbati parola, apasati
           <Link href="/user/resetpasswordprofile">
-            <a className="text-center text-danger">aici</a>
+            <a className="text-center text-danger"> aici</a>
           </Link>
         </p>
       </div>
       <div className="row">
         <div className="col">
           <Modal
-            title="Congratulations!"
+            title="Felicitari!"
             visible={ok}
             onCancel={() => setOk(false)}
             footer={null}

@@ -101,7 +101,7 @@ const AuthForm = ({
       </div>
     )}
 
-    {page !== "profile" && (
+    {page === "register" && (
       <div className="form-group p-2">
         <button
           disabled={
@@ -111,7 +111,21 @@ const AuthForm = ({
           }
           className="btn btn-primary col-12"
         >
-          {loading ? <SyncOutlined spin className="py-1" /> : "Submit"}
+          {loading ? <SyncOutlined spin className="py-1" /> : "Inregistrare"}
+        </button>
+      </div>
+    )}
+    {page === "login" && (
+      <div className="form-group p-2">
+        <button
+          disabled={
+            page === "login"
+              ? !email || !password || loading
+              : !username || !email || !password || !secret || loading
+          }
+          className="btn btn-primary col-12"
+        >
+          {loading ? <SyncOutlined spin className="py-1" /> : "Autentificare"}
         </button>
       </div>
     )}

@@ -19,6 +19,8 @@ const Chat = () => {
   const socket = useRef();
   const scrollRef = useRef();
   const a = 4;
+  const [filterUsers, setfilterUsers] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     if (user && user.token) {
@@ -81,6 +83,7 @@ const Chat = () => {
     try {
       const { data } = await axios.get("/getusers");
       setUsers(data);
+      setfilterUsers(data);
     } catch (err) {
       console.log(err);
     }
@@ -172,13 +175,34 @@ const Chat = () => {
             )}
           </div>
           <div className="col-md-3">
-            {user && user.token && (
-              <ChatOnline
-                users={users}
-                setCurrentChat={setCurrentChat}
-                currentUserId={user.user._id}
-              />
-            )}
+            <input
+              placeholder="Search"
+              className="mb-2"
+              onChange={(event) => setQuery(event.target.value)}
+            />
+            {filterUsers
+              .filter((users) => {
+                if (query === "") {
+                  console.log(users);
+                  return users;
+                } else if (
+                  users.username.toLowerCase().includes(query.toLowerCase())
+                ) {
+                  console.log(users);
+                  return users;
+                }
+              })
+              .map((users, index) => (
+                <div key={index}>
+                  {user && user.token && (
+                    <ChatOnline
+                      users={users}
+                      setCurrentChat={setCurrentChat}
+                      currentUserId={user.user._id}
+                    />
+                  )}
+                </div>
+              ))}
           </div>
         </div>
       </div>

@@ -7,31 +7,35 @@ export const register = async (req, res) => {
   //validations
   if (!username) {
     return res.json({
-      error: "username is required",
+      error: "Numele de utilizator este necesar",
     });
   }
-  if (!password || password.lenght < 6) {
+  if (!password) {
     return res.json({
-      error: "Password is required and should be 6 caracters long",
+      error: "Parola este necesara",
+    });
+  }
+  if (password.lenght < 6) {
+    return res.json({
+      error: "Parola trebuie sa aiba minim 6 caractere",
     });
   }
   if (!secret) {
     return res.json({
-      error: "Answer is required",
+      error: "Raspunsul este necesar",
     });
   }
-
   const existUsername = await User.findOne({ username });
   if (existUsername) {
     return res.json({
-      error: "Username is taken",
+      error: "Nume de utilizator indisponibil",
     });
   }
 
   const exist = await User.findOne({ email });
   if (exist) {
     return res.json({
-      error: "Email is taken",
+      error: "Email indisponibil",
     });
   }
 
@@ -47,7 +51,7 @@ export const register = async (req, res) => {
   } catch (err) {
     console.log("Register failed=>", err);
     return res.json({
-      error: "Error.Try again.",
+      error: "Eroare. Incearca din nou.",
     });
   }
 };
@@ -59,14 +63,14 @@ export const login = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       return res.json({
-        error: "No user found!",
+        error: "Utilizatorul nu exista!",
       });
     }
     //check password
     const match = await comparePassword(password, user.password);
     if (!match) {
       return res.json({
-        error: "Wrong password",
+        error: "Parola gresita!",
       });
     }
     //create signed token
@@ -79,7 +83,7 @@ export const login = async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.json({
-      error: "Error. Try Again",
+      error: "Eroare! Incearca din nou.",
     });
   }
 };
