@@ -141,7 +141,7 @@ const Chat = () => {
           </div>
 
           <div className="col-md-6">
-            {currentChat && (
+            {currentChat ? (
               <>
                 <div className="overflow-scroll chatBox">
                   {messages.map((m) => (
@@ -172,6 +172,10 @@ const Chat = () => {
                   </button>
                 </div>
               </>
+            ) : (
+              <div className="fs-2  offset-md-2 mt-5 text-muted">
+                <p>Acceseaza o conversatie</p>
+              </div>
             )}
           </div>
           <div className="col-md-3">

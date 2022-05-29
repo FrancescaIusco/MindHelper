@@ -29,11 +29,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/chat/chat.js"
-    ],
-    "/user/questionandanswer": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/user/questionandanswer.js"
     ]
   },
   "ampFirstPages": []
