@@ -7,7 +7,12 @@ export const register = async (req, res) => {
   //validations
   if (!username) {
     return res.json({
-      error: "Numele de utilizator este necesar",
+      error: `Numele de utilizator este necesar`,
+    });
+  }
+  if (username.length > 50) {
+    return res.json({
+      error: `Numele de utilizator este prea lung`,
     });
   }
   if (!password) {
@@ -15,12 +20,22 @@ export const register = async (req, res) => {
       error: "Parola este necesara",
     });
   }
-  if (password.lenght < 6) {
+  if (password.length > 50) {
     return res.json({
-      error: "Parola trebuie sa aiba minim 6 caractere",
+      error: "Parola trebuie sa aiba maxim 50 caractere",
+    });
+  }
+  if (password.length < 6) {
+    return res.json({
+      error: "Parola trebuie sa aiba minim 6 caractere ",
     });
   }
   if (!secret) {
+    return res.json({
+      error: "Raspunsul este necesar",
+    });
+  }
+  if (secret.length > 50) {
     return res.json({
       error: "Raspunsul este necesar",
     });
@@ -36,6 +51,11 @@ export const register = async (req, res) => {
   if (exist) {
     return res.json({
       error: "Email indisponibil",
+    });
+  }
+  if (email.length > 70) {
+    return res.json({
+      error: "Email este prea lung",
     });
   }
 
@@ -101,10 +121,15 @@ export const currentUser = async (req, res) => {
 export const resetPassword = async (req, res) => {
   //validation
   const { email, password, secret } = req.body;
-  if (!password || password < 6) {
+  if (!password || password.length < 6) {
     return res.json({
       error:
         "Este necesară o parolă nouă și ar trebui să aibă minim 6 caractere",
+    });
+  }
+  if (password.length > 50) {
+    return res.json({
+      error: "Parola trebui să aibă maxim 50 de caractere",
     });
   }
   if (!secret) {
@@ -145,6 +170,11 @@ export const profile = async (req, res) => {
     }
     if (req.body.image) {
       data.image = req.body.image;
+    }
+    if (req.body.username.length > 50) {
+      return res.json({
+        error: `Numele de utilizator este prea lung`,
+      });
     }
     let user = await User.findByIdAndUpdate(req.user._id, data, { new: true });
     res.json(user);

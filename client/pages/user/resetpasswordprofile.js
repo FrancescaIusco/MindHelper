@@ -87,10 +87,13 @@ const ResetPasswordProfile = () => {
             onCancel={() => setOk(false)}
             footer={null}
           >
-            <p>Parola schimbata cu success!</p>
-            {/* <Link href="/login">
-              <a className="btn btn-primary btn-sm">Login</a>
-            </Link> */}
+            <p>Parola schimbata cu succes!</p>
+            <p>Este necesar sa va autentificati!</p>
+            <Link href="/login">
+              <a className="btn btn-primary btn-sm" onClick={logout}>
+                Autentificare
+              </a>
+            </Link>
           </Modal>
         </div>
       </div>

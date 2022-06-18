@@ -76,9 +76,9 @@ const ResetPassword = () => {
             onCancel={() => setOk(false)}
             footer={null}
           >
-            <p>Parola schimbata cu success!</p>
+            <p>Parola schimbata cu succes!</p>
             <Link href="/login">
-              <a className="btn btn-primary btn-sm">Login</a>
+              <a className="btn btn-primary btn-sm">Autentificare</a>
             </Link>
           </Modal>
         </div>

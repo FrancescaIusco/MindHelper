@@ -5,10 +5,12 @@ const Stress = () => {
   const [state, setState] = useContext(UserContext);
 
   return (
-    <div className="container-fluid py-5 bg-bluepage-color">
-      <div className="row py-5 bg-depressionpage-image height-page">
+    <div className="container-fluid py-5 bg-purplepage-color">
+      <div className="row py-5 bg-default-image height-page">
         <div className="display-1 py-5 text-center">
-          <h1 style={{ color: "#f2ebe5" }}>DEPRESIE</h1>
+          <h1 className="padding-page" style={{ color: "#000000" }}>
+            DEPRESIE
+          </h1>
         </div>
       </div>
       <br></br>
@@ -19,7 +21,7 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic ">
                 Ce este depresia?
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Depresia (tulburarea depresivă majoră) este o boală medicală
                 comună, gravă, care afectează negativ modul în care vă simțiți,
                 modul în care gândiți și cum acționați. Din fericire, este
@@ -34,7 +36,7 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic py-3">
                 Cauzele depresiei
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Nu se stie care este cauza depresiei. Psihiatrii cred ca sunt
                 implicati mai multi factori biologici, psihologici si sociali.
                 Se crede ca depresia apare atunci cand exista o vulnerabilitate
@@ -47,7 +49,7 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic py-3">
                 Impactul depresiei asupra noastra
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Depresia poate afecta si sănătatea fizică. Un exemplu în acest
                 sens este cresterea/pierderea in greutate, problemele
                 gastrointestinale, dureri inexplicabile, inclusiv dureri
@@ -60,7 +62,7 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic py-3">
                 Simptomele depresiei
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Simptomele depresiei pot varia de la ușoare la severe și pot
                 include:
               </p>
@@ -81,7 +83,7 @@ const Stress = () => {
                 </li>
                 <li>Ganduri suicidale si de vatamare fizica</li>
               </ul>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Simptomele trebuie să dureze cel puțin două săptămâni pentru a
                 defini o depresie. De asemenea, anumite afecțiuni medicale cum
                 ar fi: probleme tiroidiene, o tumoare pe creier sau deficiență
@@ -95,7 +97,7 @@ const Stress = () => {
               <div class="about-heading-content lh-base">
                 <div class="row py-3">
                   <div class="rounded p-5 border border-dark bg-square-bluepage-color">
-                    <p>
+                    <p style={{ textAlign: "justify" }}>
                       <b>Modificarea stilului de viata</b> - exercitiile fizice
                       ajuta la reducerea moderata a simptomelor, dieta
                       sanatoasa, echilibrata si variata contribuie la
@@ -106,7 +108,7 @@ const Stress = () => {
                 </div>
                 <div class="row py-3">
                   <div class="rounded p-5 border border-dark bg-square-bluepage-color">
-                    <p>
+                    <p style={{ textAlign: "justify" }}>
                       <b>Psihoterapia</b> - psihoterapia sau terapia prin
                       vorbire poate ajuta la ameliorarea unor simptome asociate
                       depresiei, mai ales in cazul unei imagini distorsionate
@@ -117,7 +119,7 @@ const Stress = () => {
                 </div>
                 <div class="row py-3">
                   <div class="rounded p-5 border border-dark bg-square-bluepage-color">
-                    <p>
+                    <p style={{ textAlign: "justify" }}>
                       <b>Tratament medicamentos</b> - cele mai folosite
                       medicamente pentru tratarea depresiei sunt
                       antidepresivele. In general, medicatia este recomandata
@@ -127,7 +129,7 @@ const Stress = () => {
                 </div>
                 <div class="row py-3">
                   <div class="rounded p-5 border border-dark bg-square-bluepage-color">
-                    <p>
+                    <p style={{ textAlign: "justify" }}>
                       <b>Terapia cognitiv-comportamentala</b> - prin terapia
                       cognitiv-comportamentala se doreste schimbarea modului de
                       gandire autodistructiva, precum si a comportamentelor;
@@ -140,7 +142,7 @@ const Stress = () => {
 
                 <div class="row py-3">
                   <div class="rounded p-5 border border-dark bg-square-bluepage-color">
-                    <p>
+                    <p style={{ textAlign: "justify" }}>
                       <b>Remedii naturiste</b> - sunatoarea si substantele
                       extrase din aceasta pot ajuta la ameliorarea simptomelor
                       depresiei, avand efecte asemanatoare antidepresivelor

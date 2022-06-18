@@ -67,7 +67,7 @@ const ResetPasswordForm = ({
           disabled={!email || !password || !secret || loading}
           className="btn btn-primary col-12"
         >
-          {loading ? <SyncOutlined spin className="py-1" /> : "Submit"}
+          {loading ? <SyncOutlined spin className="py-1" /> : "Resetare parola"}
         </button>
       </div>
     )}
@@ -76,9 +76,8 @@ const ResetPasswordForm = ({
         <button
           disabled={!email || !password || !secret || loading}
           className="btn btn-primary col-12"
-          onClick={logout}
         >
-          {loading ? <SyncOutlined spin className="py-1" /> : "Submit"}
+          {loading ? <SyncOutlined spin className="py-1" /> : "Resetare parola"}
         </button>
       </div>
     )}

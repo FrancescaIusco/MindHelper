@@ -18,6 +18,7 @@ const Chat = () => {
   const [onlineUsers, setOnlineUsers] = useState("");
   const socket = useRef();
   const scrollRef = useRef();
+  const scrollRefUsers = useRef();
   const a = 4;
   const [filterUsers, setfilterUsers] = useState([]);
   const [query, setQuery] = useState("");
@@ -120,6 +121,10 @@ const Chat = () => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    scrollRefUsers.current?.scrollIntoView({ behavior: "smooth" });
+  }, [users]);
+
   return (
     <UserRoute>
       <div className="container-fluid py-5 ">
@@ -173,40 +178,42 @@ const Chat = () => {
                 </div>
               </>
             ) : (
-              <div className="fs-2  offset-md-2 mt-5 text-muted">
+              <div className="fs-3  offset-md-2 mt-5 text-muted">
                 <p>Acceseaza o conversatie</p>
               </div>
             )}
           </div>
           <div className="col-md-3">
             <input
-              placeholder="Search"
+              placeholder="Cautare"
               className="mb-2"
               onChange={(event) => setQuery(event.target.value)}
             />
-            {filterUsers
-              .filter((users) => {
-                if (query === "") {
-                  console.log(users);
-                  return users;
-                } else if (
-                  users.username.toLowerCase().includes(query.toLowerCase())
-                ) {
-                  console.log(users);
-                  return users;
-                }
-              })
-              .map((users, index) => (
-                <div key={index}>
-                  {user && user.token && (
-                    <ChatOnline
-                      users={users}
-                      setCurrentChat={setCurrentChat}
-                      currentUserId={user.user._id}
-                    />
-                  )}
-                </div>
-              ))}
+            <div className="overflow-scroll">
+              {filterUsers
+                .filter((users) => {
+                  if (query === "") {
+                    console.log(users);
+                    return users;
+                  } else if (
+                    users.username.toLowerCase().includes(query.toLowerCase())
+                  ) {
+                    console.log(users);
+                    return users;
+                  }
+                })
+                .map((users, index) => (
+                  <div key={index}>
+                    {user && user.token && (
+                      <ChatOnline
+                        users={users}
+                        setCurrentChat={setCurrentChat}
+                        currentUserId={user.user._id}
+                      />
+                    )}
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </div>

@@ -62,6 +62,7 @@ const Profile = ({ numberOfAnswers = 2 }) => {
     e.preventDefault();
     try {
       setLoading(true);
+      fetchUserPosts();
       const { data } = await axios.put(`/profile`, {
         username: username,
         about: about,
@@ -201,7 +202,7 @@ const Profile = ({ numberOfAnswers = 2 }) => {
             />
           </label>
           <div className="d-flex justify-content-center text-muted">
-            Poza de profil
+            Fotografie de profil
           </div>
         </div>
         <div className="col-md-4">
@@ -217,14 +218,14 @@ const Profile = ({ numberOfAnswers = 2 }) => {
             page="profile"
           />
         </div>
-      </div>
-      <div>
-        <p className="text-center">
-          Daca doriti sa va schimbati parola, apasati
-          <Link href="/user/resetpasswordprofile">
-            <a className="text-center text-danger"> aici</a>
-          </Link>
-        </p>
+        <div className="col-md-10">
+          <p className="text-center lead">
+            Daca doriti sa va schimbati parola, apasati
+            <Link href="/user/resetpasswordprofile">
+              <a className="text-center text-danger"> aici</a>
+            </Link>
+          </p>
+        </div>
       </div>
       <div className="row">
         <div className="col">

@@ -83,7 +83,7 @@ const Register = () => {
           >
             <p>Te-ai inregistrat cu succes.</p>
             <Link href="/login">
-              <a className="btn btn-primary btn-sm">Login</a>
+              <a className="btn btn-primary btn-sm">Autentificare</a>
             </Link>
           </Modal>
         </div>

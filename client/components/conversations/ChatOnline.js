@@ -60,36 +60,14 @@ const ChatOnline = ({ users, setCurrentChat, currentUserId }) => {
     <>
       <div className="d-flex mt-1">
         <div>
-          <Avatar size={40} src={imageSource(users)}>
-            {users.username[0]}
-          </Avatar>
-          <span className="pt-2 mx-2">{users.username}</span>
-          {/* <List
-            itemLayout="horizontal"
-            dataSource={users}
-            renderItem={(restuser) => (
-              <>
-                {restuser._id !== state.user._id && (
-                  <div onClick={() => handleClick(restuser)}>
-                    <List.Item>
-                      <List.Item.Meta
-                        avatar={
-                          <Avatar size={40} src={imageSource(restuser)}>
-                            {restuser.username[0]}
-                          </Avatar>
-                        }
-                        title={
-                          <div className="d-flex justify-content-between">
-                            {restuser.username}
-                          </div>
-                        }
-                      />
-                    </List.Item>
-                  </div>
-                )}
-              </>
-            )}
-          /> */}
+          {users._id !== state.user._id && (
+            <div onClick={() => handleClick(users)}>
+              <Avatar size={40} src={imageSource(users)}>
+                {users.username[0]}
+              </Avatar>
+              <span className="pt-2 mx-2">{users.username}</span>
+            </div>
+          )}
         </div>
       </div>
     </>

@@ -19,6 +19,34 @@
   background-size: 100% 370px;
 }
 
+.bg-bipolar-image {
+  background-image: url(/images/bipolar.jpg);
+  background-size: 100% 150px;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
+.bg-panic-image {
+  background-image: url(/images/panic.jpeg);
+  background-size: 100%;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
+.bg-bindge-image {
+  background-image: url(/images/bindge.jfif);
+  background-size: 100%;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
+.bg-bulimia-image {
+  background-image: url(/images/bulimia.png);
+  background-size: 100% 150px;
+  height: 150px;
+  width: 210px;
+  box-shadow: inset 0 0 99999px #b49dbf;
+}
 .bg-stress-image {
   background-image: url(/images/stress.jpg);
   background-size: 100%;
@@ -68,7 +96,7 @@
 }
 
 .bg-square-bluepage-color {
-  background-color: #bec6ca;
+  background-color: #dee2e4;
 }
 .bg-bluepage-color {
   background-color: #eef0f1;
@@ -78,8 +106,8 @@
   background-color: #f4f0f5;
 }
 
-.bg-square-pinkpage-color {
-  background-color: #fbe0c3;
+.bg-square-purple-color {
+  background-color: #e3d9e5;
 }
 .bg-pinkpage-color {
   background-color: #fef7f0;

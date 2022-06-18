@@ -89,7 +89,7 @@ const AuthForm = ({
     {page === "profile" && (
       <div className="form-group p-2">
         <small>
-          <label className="text-muted">Desspre tine</label>
+          <label className="text-muted">Despre tine</label>
         </small>
         <input
           value={about}

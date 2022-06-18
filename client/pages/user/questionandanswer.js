@@ -49,7 +49,7 @@ const questionandanswer = () => {
         toast.error(data.error);
       } else {
         fetchUserPosts();
-        toast.success("Question posted");
+        toast.success("Intrebare postata");
         setContent("");
       }
     } catch (err) {
@@ -128,7 +128,7 @@ const questionandanswer = () => {
           </div>
         </div>
         <div className="row py-3">
-          <div className="col-md-8 offset-md-1">
+          <div className="col-md-8 offset-md-2">
             <PostForm
               content={content}
               setContent={setContent}
@@ -136,8 +136,8 @@ const questionandanswer = () => {
             />
             <br />
             <input
-              placeholder="Search"
-              className="mb-2"
+              placeholder="Cautare"
+              className="mb-2 form-control mr-sm-2"
               onChange={(event) => setQuery(event.target.value)}
             />
             {filterPosts

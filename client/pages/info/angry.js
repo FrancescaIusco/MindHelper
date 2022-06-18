@@ -6,10 +6,10 @@ const Stress = () => {
   const [state, setState] = useContext(UserContext);
 
   return (
-    <div className="container-fluid py-5 bg-pinkpage-color ">
-      <div className="row py-5 bg-angrypage-image height-page">
+    <div className="container-fluid py-5 bg-purplepage-color">
+      <div className="row py-5 bg-default-image height-page">
         <div className="display-1 py-5 text-center">
-          <h1 className="padding-page" style={{ color: "#344648" }}>
+          <h1 className="padding-page" style={{ color: "#000000" }}>
             FURIE
           </h1>
         </div>
@@ -22,7 +22,7 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic ">
                 Ce este furia?
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Furia este una dintre emoţiile de bază şi este o emotie
                 frecventă in viata oamenilor. Poate fi definica ca un puternic
                 sentiment de supărare, nemulțumire sau ostilitate. Furia este
@@ -34,7 +34,7 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic py-3">
                 Cauzele furiei
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Furia apare atunci când ne simtim nedreptățiți, cand apar
                 dificultati in relatiile cu alte persoane, cand apar probleme
                 neprevazute in viata de zi cu zi, la locul de munca, probleme
@@ -47,7 +47,7 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic py-3">
                 Impactul furiei asupra noastra
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Furia este unul dintrele cele mai dăunătoare emoții pentru corp,
                 minte și inimă. Furia are impact și asupra problemelor de
                 sănătate, în special în bolile cardiovasculare, deoarece atunci
@@ -56,7 +56,7 @@ const Stress = () => {
                 precum și echilibrul la nivelul sistemului nervos, hormonal și
                 cardiovascular - are de suferit.
               </p>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 Pe langa efectele pe care furia le poate avea asupra corpului
                 uman, aceasta poate avea un efect si asupra persoanelor din jur
                 deeoarece furia intensă exprimată agresiv se regăseşte în
@@ -66,11 +66,13 @@ const Stress = () => {
               <h1 className="display-5 text-center fst-italic py-3">
                 Simptomele furiei
               </h1>
-              <p>
+              <p style={{ textAlign: "justify" }}>
                 In ceea ce priveste furia nu putem vorbi de simtome ci mai
                 degraba de situatii care pot conduce la furie.
               </p>
-              <p>Cateva din aceste situatii sunt:</p>
+              <p style={{ textAlign: "justify" }}>
+                Cateva din aceste situatii sunt:
+              </p>
               <ul>
                 <li>Frustrarea</li>
                 <li>Sentimentul de lipsa de putere</li>
@@ -86,8 +88,8 @@ const Stress = () => {
               </h1>
               <div class="container-fluid">
                 <div class="row py-3">
-                  <div class="rounded p-5 border border-dark bg-square-pinkpage-color">
-                    <p>
+                  <div class="rounded p-5 border border-dark bg-square-bluepage-color">
+                    <p style={{ textAlign: "justify" }}>
                       <b>Relaxarea</b> - practicarea tehnicilor de relaxare sau
                       antrenamentul autogen pot ajuta la relexare si sunt o
                       modalitate de a face mai bine furiei.
@@ -95,8 +97,8 @@ const Stress = () => {
                   </div>
                 </div>
                 <div class="row py-3">
-                  <div class="rounded p-5 border border-dark bg-square-pinkpage-color">
-                    <p>
+                  <div class="rounded p-5 border border-dark bg-square-bluepage-color">
+                    <p style={{ textAlign: "justify" }}>
                       <b>Practicarea regulata a exercitiilor fizice</b> -
                       exercițiile fizice determină eliberarea de
                       neurotransmițători cum ar fi dopamina și serotonina care
@@ -105,8 +107,8 @@ const Stress = () => {
                   </div>
                 </div>
                 <div className="row py-3">
-                  <div class="rounded p-5 border border-dark bg-square-pinkpage-color">
-                    <p>
+                  <div class="rounded p-5 border border-dark bg-square-bluepage-color">
+                    <p style={{ textAlign: "justify" }}>
                       <b>Exprimarea emotiilor</b> - exprimarea emotiilor si
                       vorbitul liber despre ceea ce simtim cu prietenii, cei
                       dragi sau un specialist pot ajuta la calitatea vietii.
@@ -114,8 +116,8 @@ const Stress = () => {
                   </div>
                 </div>
                 <div class="row py-3">
-                  <div class="rounded p-5 border border-dark bg-square-pinkpage-color">
-                    <p>
+                  <div class="rounded p-5 border border-dark bg-square-bluepage-color">
+                    <p style={{ textAlign: "justify" }}>
                       <b>Asertivitatea</b> -asertivitatea înseamnă
                       non-agresivitate. Exprimarea frustrarii intr-un mod
                       direct, insa neagresiv si formularea preocuparilor si

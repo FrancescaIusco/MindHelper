@@ -32,7 +32,7 @@ const EditPost = () => {
       if (data.error) {
         toast.error(data.error);
       } else {
-        toast.success("Post updated");
+        toast.success("Posare modificata cu succes");
         router.push("/user/questionandanswer");
       }
     } catch (err) {

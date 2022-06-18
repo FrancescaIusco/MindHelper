@@ -17,7 +17,7 @@ const PostForm = ({ content, setContent, postSubmit }) => {
           onClick={postSubmit}
           className="btn btn-primary btn-sm mt-1"
         >
-          Post
+          Postează
         </button>
       </div>
     </div>
